@@ -1,0 +1,22 @@
+{
+  "name": "rpi_smart_speaker",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/small-sunshines/rpi_smart_speaker.git"
+  },
+  "author": "small_sunshine <jioo0224@naver.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/small-sunshines/rpi_smart_speaker/issues"
+  },
+  "homepage": "https://github.com/small-sunshines/rpi_smart_speaker#readme",
+  "dependencies": {
+    "google-assistant": "^0.5.2"
+  }
+}

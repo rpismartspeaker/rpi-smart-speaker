@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# google-assistant key file
+client_secret.json
+tokens.json
