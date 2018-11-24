@@ -62,4 +62,4 @@ typings/
 
 # google-assistant key file
 client_secret.json
-tokens.json
+credentials.json
