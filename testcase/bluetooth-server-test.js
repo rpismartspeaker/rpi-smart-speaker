@@ -1,6 +1,9 @@
 const server = new(require('bluetooth-serial-port')).BluetoothSerialPortServer()
 
-const channel = 10
+const configure = {
+  channel: 1,
+  uuid: '38e851bc-7144-44b4-9cd8-80549c6f2912'
+}
 
 server.listen((clientAddress) => {
   console.log(`Client: ${clientAddress} connected!`)
@@ -17,6 +20,4 @@ server.listen((clientAddress) => {
   })
 }, error => {
   console.log(`Something wrong happended: ${error}`)
-}, {
-  channel
-})
+}, configure)
