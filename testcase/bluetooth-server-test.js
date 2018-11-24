@@ -21,3 +21,8 @@ server.listen((clientAddress) => {
 }, error => {
   console.log(`Something wrong happended: ${error}`)
 }, configure)
+console.log('Server: Starting!')
+
+setInterval(() => {
+  console.log('bluetooth status: ' + server.isOpen())
+}, 2000)
