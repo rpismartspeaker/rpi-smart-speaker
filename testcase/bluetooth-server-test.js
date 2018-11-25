@@ -5,13 +5,8 @@ const serviceUUID = [
   'b9114d25-90b9-4922-9216-f3f65b219cea'
 ]
 
-bleno.startAdvertising(name, serviceUUID, (error) => {
-  console.error('error!')
-  console.error(error)
-})
-
 const PrimaryService = new bleno.PrimaryService({
-  uuid: 'b9114d25-90b9-4922-9216-f3f65b219cea',
+  uuid: serviceUUID[0],
   characteristics: []
 })
 
@@ -19,7 +14,7 @@ bleno.on('stateChange', state => {
   console.log(`on -> stateChange: ${state}, address: ${bleno.address}`)
 
   if (state === 'poweredOn') {
-    bleno.startAdvertising('bluetooth-server-test', ['b9114d25-90b9-4922-9216-f3f65b219cea'])
+    bleno.startAdvertising(name, serviceUUID)
   } else {
     bleno.stopAdvertising()
   }
