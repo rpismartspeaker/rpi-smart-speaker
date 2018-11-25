@@ -27,7 +27,7 @@ bleno.on('accept', address => {
 })
 
 bleno.on('disconnect', rssi => {
-  console.log(`on -> disconnect, client: ${address}`)
+  console.log(`on -> disconnect, client: ${rssi}`)
 })
 
 bleno.on('rssiUpdate', rssi => {
