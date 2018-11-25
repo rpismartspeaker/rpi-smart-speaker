@@ -10,7 +10,7 @@ bleno.startAdvertising(name, serviceUUID, (error) => {
   console.error(error)
 })
 
-const Service = bleno.PrimaryService({
+const PrimaryService = new newbleno.PrimaryService({
   uuid: 'b9114d25-90b9-4922-9216-f3f65b219cea',
   characteristics: []
 })
@@ -50,7 +50,7 @@ bleno.on('advertisingStart', error => {
 
     if (!error) {
       bleno.setServices([
-        new Service()
+        PrimaryService()
       ])
     }
 })
