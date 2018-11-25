@@ -2,7 +2,7 @@ const server = new(require('bluetooth-serial-port')).BluetoothSerialPortServer()
 
 const configure = {
   channel: 1,
-  uuid: '1101'
+  uuid: '0x1101'
 }
 
 server.listen((clientAddress) => {
