@@ -45,7 +45,7 @@ bleno.on('advertisingStart', error => {
 
     if (!error) {
       bleno.setServices([
-        PrimaryService()
+        PrimaryService
       ])
     }
 })
