@@ -10,7 +10,7 @@ bleno.startAdvertising(name, serviceUUID, (error) => {
   console.error(error)
 })
 
-const PrimaryService = new newbleno.PrimaryService({
+const PrimaryService = new bleno.PrimaryService({
   uuid: 'b9114d25-90b9-4922-9216-f3f65b219cea',
   characteristics: []
 })
