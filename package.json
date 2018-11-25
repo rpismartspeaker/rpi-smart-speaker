@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/small-sunshines/rpi_smart_speaker#readme",
   "dependencies": {
-    "bluetooth-serial-port": "^2.1.7",
+    "bleno": "^0.5.0",
     "google-assistant": "^0.5.2",
     "node-record-lpcm16": "^0.3.1",
     "pi-wifi": "^1.2.0",
