@@ -43,11 +43,11 @@ bleno.on('advertisingStart', error => {
     'error' + error :
     'success')}`)
 
-    if (!error) {
-      bleno.setServices([
-        PrimaryService
-      ])
-    }
+  if (!error) {
+    bleno.setServices([
+      PrimaryService
+    ])
+  }
 })
 
 bleno.on('advertisingStop', () => {
