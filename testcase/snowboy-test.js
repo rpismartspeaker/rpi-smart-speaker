@@ -44,8 +44,8 @@ const mic = record.start({
   sampleRate    : 16000,      // audio sample rate
   threshold     : 0,        // silence threshold (rec only)
   silence       : 10.0,        // seconds of silence before ending
-  verbose       : true,       // log info to the console
-  recordProgram : 'arecord',  // Defaults to 'arecord' - also supports 'rec' and 'sox'
+  verbose       : false,       // log info to the console
+  recordProgram : 'sox',  // Defaults to 'arecord' - also supports 'rec' and 'sox'
 })
 .on('error', error => {
   console.log(error)
