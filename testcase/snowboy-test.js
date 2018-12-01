@@ -43,7 +43,6 @@ detector.on('hotword', (index, hotword, buffer) => {
 const mic = record.start({
   sampleRate    : 16000,      // audio sample rate
   threshold     : 0,        // silence threshold (rec only)
-  silence       : 10.0,        // seconds of silence before ending
   verbose       : false,       // log info to the console
   recordProgram : 'sox',  // Defaults to 'arecord' - also supports 'rec' and 'sox'
 })
