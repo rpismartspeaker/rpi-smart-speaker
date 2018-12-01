@@ -49,7 +49,11 @@ const idleMode = () => {
 
   mic.pipe(detector);*/
 
-  record.start().pipe(detector)
+  record.start({
+    threshold: 0,
+    verbose: true,
+    recordProgram: 'arecord'
+  }).pipe(detector)
 }
 
 idleMode()
