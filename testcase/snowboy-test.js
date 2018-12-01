@@ -43,7 +43,8 @@ detector.on('hotword', function (index, hotword, buffer) {
 
 const mic = record.start({
   threshold: 0,
-  verbose: true
+  verbose: true,
+  recordProgram: 'arecord'
 });
 
 mic.pipe(detector);
