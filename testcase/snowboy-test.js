@@ -6,17 +6,17 @@ const models = new Models();
 
 models.add({
   file: path.resolve(__dirname, '..', 'resources', 'model', 'jarvis.pmdl'),
-  sensitivity: '0.8',
+  sensitivity: '0.95',
   hotwords : 'jarvis'
 })
 models.add({
   file: path.resolve(__dirname, '..', 'resources', 'model', 'Alexa.pmdl'),
-  sensitivity: '0.8',
+  sensitivity: '0.95',
   hotwords : 'Alexa'
 })
 models.add({
   file: path.resolve(__dirname, '..', 'resources', 'model', 'OK_Google.pmdl'),
-  sensitivity: '0.8',
+  sensitivity: '0.95',
   hotwords : 'OK Google'
 })
 
