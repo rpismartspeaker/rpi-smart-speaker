@@ -5,13 +5,13 @@ const path = require('path')
 const models = new Models();
 
 models.add({
-  file: path.resolve(__dirname, '..', 'resources/model/OK_Google.pmdl'),
+  file: path.resolve(__dirname, '..', 'resources', 'model', 'OK_Google.pmdl'),
   sensitivity: '0.5',
   hotwords : 'OK Google'
 });
 
 const detector = new Detector({
-  resource: path.resolve(__dirname, '..', 'resources/snowboy/common.res'),
+  resource: path.resolve(__dirname, '..', 'resources', 'snowboy', 'common.res'),
   models: models,
   audioGain: 2.0,
   applyFrontend: true
@@ -42,11 +42,11 @@ detector.on('hotword', (index, hotword, buffer) => {
 
 const mic = record.start({
   sampleRate    : 16000,      // audio sample rate
-  threshold     : 0.5,        // silence threshold (rec only)
-  thresholdStart: null,       // silence threshold to start recording, overrides threshold (rec only)
-  thresholdEnd  : null,       // silence threshold to end recording, overrides threshold (rec only)
-  silence       : 1.0,        // seconds of silence before ending
+  threshold     : 0,        // silence threshold (rec only)
+  silence       : 10.0,        // seconds of silence before ending
   verbose       : true,       // log info to the console
   recordProgram : 'arecord',  // Defaults to 'arecord' - also supports 'rec' and 'sox'
-  device        : null,       // recording device (e.g.: 'plughw:1')
+})
+.on('error', error => {
+  console.log(error)
 }).pipe(detector)
