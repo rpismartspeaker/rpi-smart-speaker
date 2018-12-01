@@ -5,10 +5,15 @@ const path = require('path')
 const models = new Models();
 
 models.add({
-  file: path.resolve(__dirname, '..', 'resources', 'model', 'OK_Google.pmdl'),
+  file: path.resolve(__dirname, '..', 'resources', 'model', 'jarvis.pmdl'),
   sensitivity: '0.5',
-  hotwords : 'OK Google'
-});
+  hotwords : 'jarvis'
+})
+models.add({
+  file: path.resolve(__dirname, '..', 'resources', 'model', 'jarvis.pmdl'),
+  sensitivity: '0.5',
+  hotwords : 'Alexa'
+})
 
 const detector = new Detector({
   resource: path.resolve(__dirname, '..', 'resources', 'snowboy', 'common.res'),
@@ -44,7 +49,7 @@ const mic = record.start({
   sampleRate    : 16000,      // audio sample rate
   threshold     : 0,          // silence threshold (rec only)
   verbose       : true,       // log info to the console
-  recordProgram : 'arecord',  // Defaults to 'arecord' - also supports 'rec' and 'sox'
+  recordProgram : 'sox',  // Defaults to 'arecord' - also supports 'rec' and 'sox'
 })
 .on('error', error => {
   console.log(error)
