@@ -5,11 +5,6 @@ const path = require('path')
 const models = new Models();
 
 models.add({
-  file: path.resolve(__dirname, '..', 'resources', 'model', 'jarvis.pmdl'),
-  sensitivity: '0.99',
-  hotwords : 'jarvis'
-})
-models.add({
   file: path.resolve(__dirname, '..', 'resources', 'model', 'Alexa.pmdl'),
   sensitivity: '0.99',
   hotwords : 'Alexa'
@@ -24,8 +19,8 @@ console.log(models.numHotwords())
 
 const detector = new Detector({
   resource: path.resolve(__dirname, '..', 'resources', 'snowboy', 'common.res'),
-  models: models,
-  audioGain: 1.0,
+  models,
+  audioGain: 0.5,
   applyFrontend: true
 })
 
