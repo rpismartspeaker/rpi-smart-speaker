@@ -1,17 +1,18 @@
 const record = require('node-record-lpcm16');
 const Detector = require('snowboy').Detector;
 const Models = require('snowboy').Models;
+const path = require('path')
 
 const models = new Models();
 
 models.add({
-  file: '../resources/model/OK_Google.pmdl',
+  file: path.resolve(__dirname, '..', 'resources/model/OK_Google.pmdl'),
   sensitivity: '0.5',
-  hotwords : 'snowboy'
+  hotwords : 'OK Google'
 });
 
 const detector = new Detector({
-  resource: "../resources/snowboy/common.res",
+  resource: path.resolve(__dirname, '..', 'resources/snowboy/common.res'),
   models: models,
   audioGain: 2.0,
   applyFrontend: true
