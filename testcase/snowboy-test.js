@@ -10,9 +10,14 @@ models.add({
   hotwords : 'jarvis'
 })
 models.add({
-  file: path.resolve(__dirname, '..', 'resources', 'model', 'jarvis.pmdl'),
+  file: path.resolve(__dirname, '..', 'resources', 'model', 'Alexa.pmdl'),
   sensitivity: '0.5',
   hotwords : 'Alexa'
+})
+models.add({
+  file: path.resolve(__dirname, '..', 'resources', 'model', 'OK_Google.pmdl'),
+  sensitivity: '0.5',
+  hotwords : 'OK Google'
 })
 
 const detector = new Detector({
@@ -48,7 +53,7 @@ detector.on('hotword', (index, hotword, buffer) => {
 const mic = record.start({
   sampleRate    : 16000,  // audio sample rate
   channels      : 1,      // number of channels
-  threshold     : 0.5,    // silence threshold (rec only)
+  threshold     : 5,    // silence threshold (rec only)
   thresholdStart: null,   // silence threshold to start recording, overrides threshold (rec only)
   thresholdEnd  : null,   // silence threshold to end recording, overrides threshold (rec only)
   silence       : '1.0',  // seconds of silence before ending
