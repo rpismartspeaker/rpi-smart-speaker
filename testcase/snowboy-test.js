@@ -1,6 +1,5 @@
 const record = require('node-record-lpcm16');
-const Detector = require('snowboy').Detector;
-const Models = require('snowboy').Models;
+const { Detector, Models } = require('snowboy')
 const path = require('path')
 
 const models = new Models();
@@ -41,10 +40,12 @@ detector.on('hotword', function (index, hotword, buffer) {
   console.log('hotword', index, hotword);
 });
 
-const mic = record.start({
+/* const mic = record.start({
   threshold: 0,
   verbose: true,
   recordProgram: 'arecord'
 });
 
-mic.pipe(detector);
+mic.pipe(detector);*/
+
+record.start().pipe(detector)
