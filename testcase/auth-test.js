@@ -19,30 +19,30 @@ try {
     opn(url)
   } catch (e) {
     console.log(`please visit to ${url}`)
-  } finally {
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    })
-    
-    rl.question('token: ', answer => {
-      if (!answer) {
-        process.exit(-1)
-      } else {
-        Auth.getToken(answer, (err, res) => {
-          if (err) {
-            throw new Error(`error getting token: ${err}`)
-          } else {
-            let token = JSON.stringify(res)
-            fs.writeFileSync(path.resolve(__dirname, '..', 'credentials.json'), token, {
-              encoding: 'utf8'
-            })
-          }
-        })
-      }
-      rl.close()
-    })
   }
+
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+  
+  rl.question('token: ', answer => {
+    if (!answer) {
+      process.exit(-1)
+    } else {
+      Auth.getToken(answer, (err, res) => {
+        if (err) {
+          throw new Error(`error getting token: ${err}`)
+        } else {
+          let token = JSON.stringify(res)
+          fs.writeFileSync(path.resolve(__dirname, '..', 'credentials.json'), token, {
+            encoding: 'utf8'
+          })
+        }
+      })
+    }
+    rl.close()
+  })
 } catch (e) {
   console.error(e)
 }
