@@ -1,7 +1,6 @@
 'use strict';
 
 const { OAuth2Client } = require('google-auth-library')
-const opn = require('opn')
 const readline = require('readline')
 const fs = require('fs')
 const path = require('path')
@@ -15,11 +14,7 @@ try {
     scope: ['https://www.googleapis.com/auth/assistant-sdk-prototype'],
   });
 
-  try {
-    opn(url)
-  } catch (e) {
-    console.log(`please visit to ${url}`)
-  }
+  console.log(`please visit to ${url}`)
 
   const rl = readline.createInterface({
     input: process.stdin,
